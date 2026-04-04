@@ -1,0 +1,2 @@
+This directory contains all package with messive configuration, normally each `.nix` file is a module.
+File with name ends with `-pkg.nix` is a Nix expression that used in `home.packages` or `environment.systemPackages` by `import ... { ... }`.
