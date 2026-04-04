@@ -8,6 +8,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs.firefox.enable = true;
+  programs.zsh.enable = true;
 
   # This may require a reboot
   programs.gnupg.agent = {

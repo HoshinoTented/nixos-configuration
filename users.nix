@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   users.users.hoshino = {
@@ -8,5 +8,8 @@
       "wheel"
       "networkmanager"
     ];
+
+    # This require `programs.zsh.enable = true` in `configuration.nix` even it was enabled in home-manager
+    shell = pkgs.zsh;
   };
 }
