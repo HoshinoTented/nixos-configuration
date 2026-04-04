@@ -1,8 +1,7 @@
 { config, pkgs, ... }:
-let
-  myEmacs = import ./packages/emacs.nix { inherit pkgs; };
-in
 {
+  imports = [ ./packages/emacs.nix ];
+
   # Some vscode extensions are unfree, so...
   nixpkgs.config.allowUnfree = true;
   nix.settings.substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
@@ -22,16 +21,9 @@ in
   # List packages installed in system profile.
   # Only fundamental packages should be installed in this way, for other packages, use user configuration, nix profile or home-manager
   environment.systemPackages = with pkgs; [
-    vim wget steam-run myEmacs
+    vim wget steam-run
     neofetch localsend
   ];
-
-  # Emacs service
-  services.emacs = {
-    enable = true;
-    defaultEditor = true;
-    package = myEmacs;
-  };
 
   # OpenTabletDriver
   hardware.opentabletdriver.enable = true;

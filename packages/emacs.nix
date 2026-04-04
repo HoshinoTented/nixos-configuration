@@ -1,10 +1,18 @@
-{ pkgs }:
+{ pkgs, ... }:
 
 let
-  emacs = pkgs.emacs;
-  emacsWithPkgs = (pkgs.emacsPackagesFor emacs).emacsWithPackages;
+  emacsWithPkgs = (pkgs.emacsPackagesFor pkgs.emacs).emacsWithPackages;
+  myEmacs = emacsWithPkgs (
+    epkgs: with epkgs.melpaPackages; [ nix-mode ]
+  );
 in
+{
+  environment.systemPackages = [ myEmacs ];
 
-emacsWithPkgs (
-  epkgs: with epkgs.melpaPackages; [ nix-mode ]
-)
+  # Emacs service
+  services.emacs = {
+    enable = true;
+    defaultEditor = true;
+    package = myEmacs;
+  };
+}
