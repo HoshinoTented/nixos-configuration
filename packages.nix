@@ -16,7 +16,6 @@
     pinentryPackage = with pkgs; pinentry-qt;
   };
 
-  programs.direnv.enable = true;
   services.flatpak.enable = true;
   
   # List packages installed in system profile.
