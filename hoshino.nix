@@ -26,13 +26,21 @@ args@{ config, pkgs, ... }:
     };
   };
 
+  programs.git = {
+    enable = true;
+    settings = {
+      user.name = "HoshinoTented";
+      user.email = "hoshinotented@qq.com";
+    };
+  };
+
   home.packages = with pkgs; [
     # IM
     telegram-desktop mumble
     # network
     v2rayn xray
     # utils
-    bat git
+    bat
     (import ./packages/vscode-pkg.nix args)
   ];
 }
