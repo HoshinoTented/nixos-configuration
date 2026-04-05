@@ -36,6 +36,10 @@
   ];
 
   # fcitx5
+  ## This require more configuration on Plasma, see https://wiki.archlinux.org/title/Fcitx5
+  ## > Plasma on Wayland requires the input method process to be invoked by KWin.
+  ## > To achieve that, quit any running Fcitx 5 process, head to `System Settings > Input & Output > Keyboard > Virtual Keyboard`,
+  ## > then select Fcitx 5. 
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;
