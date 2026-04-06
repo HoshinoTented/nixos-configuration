@@ -5,6 +5,7 @@
 
   # see https://github.com/NixOS/nixpkgs/issues/102547 if something go wrong
   # not sure if this will work
+  # try to make quantum value as small as possible
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -12,13 +13,10 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-    extraConfig.pipewire."92-low-latency" = {
-      "context.properties" = {
-        "default.clock.rate" = 44100;
-        "default.clock.allowed-rates" = [ 44100 ];
-        "default.clock.quantum" = 32;
-        "default.clock.min-quantum" = 32;
-        "default.clock.max-quantum" = 32;
+    extraConfig.jack."92-low-latency" = {
+      "jack.properties" = {
+        # Try to start from a higher value like 1024/44100
+        "node.latency" = "32/44100";
       };
     };
   };
@@ -32,6 +30,16 @@
   # network
   networking.hostName = "hoshino-nix";
   networking.networkmanager.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [
+      53317   # localsend
+    ];
+    allowedUDPPorts = [
+      53317
+    ];
+  };
+  
 
   services.resolved = {
     enable = true;

@@ -16,7 +16,7 @@ args@{ config, pkgs, ... }:
     syntaxHighlighting.enable = true;
     shellAliases = {
       la = "ls -alhF";
-      nixos-sync = "sudo nixos-rebuild --flake /home/hoshino/.config/nixos";
+      nixos-sync = "nixos-rebuild --sudo --flake /home/hoshino/.config/nixos";
     };
 
     oh-my-zsh = {
