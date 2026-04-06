@@ -26,6 +26,8 @@
   ];
 
   # OpenTabletDriver
+  ## If you use multiple monitor and the mapping is only have screen
+  ## you can restart the daemon by `systemctl --user restart opentabletdriver.service`
   hardware.opentabletdriver.enable = true;
   hardware.uinput.enable = true;
   boot.kernelModules = [ "uinput" ];

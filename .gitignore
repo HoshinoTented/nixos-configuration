@@ -1,2 +1,7 @@
+# Adding flake.lock to git is recommended, otherwise nix will keep updating flake.nix
+# each time you run nixos-rebuild
+
+# flake.lock
+
 # Emacs
 *~
