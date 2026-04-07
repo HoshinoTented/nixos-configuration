@@ -16,7 +16,7 @@
     extraConfig.jack."92-low-latency" = {
       "jack.properties" = {
         # Try to start from a higher value like 1024/44100
-        "node.latency" = "32/44100";
+        "node.latency" = "16/44100";
       };
     };
   };

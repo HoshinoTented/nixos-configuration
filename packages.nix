@@ -35,6 +35,7 @@
   fonts.packages = with pkgs; [
     lxgw-wenkai fira-code
     noto-fonts-cjk-sans
+    source-han-sans-vf-otf  # recommended chinese font
   ];
 
   # fcitx5
