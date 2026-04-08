@@ -16,7 +16,7 @@ args@{ config, pkgs, ... }:
     syntaxHighlighting.enable = true;
     shellAliases = {
       la = "ls -alhF";
-      nixos-sync = "nixos-rebuild --sudo --flake /home/hoshino/.config/nixos";
+      nixos-sync = "nixos-rebuild --sudo --flake /home/hoshino/.config/nixos";    # Clone your configuration to this directory
     };
 
     oh-my-zsh = {
@@ -37,6 +37,8 @@ args@{ config, pkgs, ... }:
     settings = {
       user.name = "HoshinoTented";
       user.email = "hoshinotented@qq.com";
+      pull.rebase = true;
+      pager.branch = false;
     };
   };
 
