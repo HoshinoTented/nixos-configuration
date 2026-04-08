@@ -28,6 +28,7 @@
   # OpenTabletDriver
   ## If you use multiple monitor and the mapping is only have screen
   ## you can restart the daemon by `systemctl --user restart opentabletdriver.service`
+  ## Also it is recommended to play osu! with X11 instead of Wayland
   hardware.opentabletdriver.enable = true;
   hardware.uinput.enable = true;
   boot.kernelModules = [ "uinput" ];
@@ -35,7 +36,7 @@
   fonts.packages = with pkgs; [
     lxgw-wenkai fira-code
     noto-fonts-cjk-sans
-    source-han-sans-vf-otf  # recommended chinese font
+    wqy_microhei
   ];
 
   # fcitx5
