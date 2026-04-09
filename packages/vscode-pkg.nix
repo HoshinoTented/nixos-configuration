@@ -9,6 +9,8 @@ with pkgs;
     jnoortheen.nix-ide
     mads-hartmann.bash-ide-vscode
     ms-vscode-remote.remote-ssh
+    banacorn.agda-mode
+    mkhl.direnv
     # anthropic.claude-code
   ] ++ vscode-utils.extensionsFromVscodeMarketplace [
     {

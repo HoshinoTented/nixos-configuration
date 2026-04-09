@@ -39,6 +39,7 @@ args@{ config, pkgs, ... }:
       user.email = "hoshinotented@qq.com";
       pull.rebase = true;
       pager.branch = false;
+      pager.stash = false;
     };
   };
 
