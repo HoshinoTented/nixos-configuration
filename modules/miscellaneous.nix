@@ -30,11 +30,10 @@
       "share" = {
         "path" = "/home/hoshino/Public";
         "browseable" = "yes";
-        "read only" = "yes";
-        "guest ok" = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
         "create mask" = "0644";
         "directory mask" = "0755";
-        "write list" = "hoshino";
         "force user" = "hoshino";
         "force group" = "users";
       };
