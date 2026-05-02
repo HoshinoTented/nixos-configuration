@@ -17,6 +17,8 @@ args@{ config, pkgs, ... }:
     shellAliases = {
       la = "ls -alhF";
       nixos-sync = "nixos-rebuild --sudo --flake /home/hoshino/.config/nixos";    # Clone your configuration to this directory
+      gamma15 = "xgamma -gamma 1.5";
+      gamma10 = "xgamma -gamma 1.0";
     };
 
     oh-my-zsh = {
@@ -51,5 +53,7 @@ args@{ config, pkgs, ... }:
     # utils
     bat
     (import ./packages/vscode-pkg.nix args)
+    # gamma on x11
+    xgamma
   ];
 }
