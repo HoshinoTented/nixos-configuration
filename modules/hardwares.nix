@@ -13,18 +13,22 @@
 
   # see https://github.com/NixOS/nixpkgs/issues/102547 if something go wrong
   # not sure if this will work
-  # try to make quantum value as small as possible
   security.rtkit.enable = true;
+  # For more information, see: https://docs.pipewire.org/page_config.html
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-    extraConfig.jack."92-low-latency" = {
-      "jack.properties" = {
-        # Try to start from a higher value like 1024/44100
-        "node.latency" = "16/44100";
+    # This require a reboot
+    # try to make quantum value as small as possible
+    extraConfig.pipewire."92-low-latency" = {
+      "context.properties" = {
+        "default.clock.rate" = 48000;
+        "default.clock.quantum" = 128;
+        "default.clock.min-quantum" = 128;
+        "default.clock.max-quantum" = 128;
       };
     };
   };
