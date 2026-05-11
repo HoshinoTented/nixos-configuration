@@ -23,6 +23,7 @@
   environment.systemPackages = with pkgs; [
     vim wget steam-run
     neofetch localsend
+    p7zip zip unzip
   ];
 
   # OpenTabletDriver
