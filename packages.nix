@@ -24,6 +24,7 @@
     vim wget steam-run
     neofetch localsend
     p7zip zip unzip
+    pciutils usbutils
   ];
 
   # OpenTabletDriver
@@ -59,6 +60,7 @@
   # steam, require allowUnfree
   programs.steam = {
     enable = true;
+    protontricks.enable = true;
     localNetworkGameTransfers.openFirewall = true;
   };
 }
