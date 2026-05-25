@@ -25,6 +25,7 @@
     neofetch localsend
     p7zip zip unzip
     pciutils usbutils
+    jq bubblewrap
   ];
 
   # OpenTabletDriver
