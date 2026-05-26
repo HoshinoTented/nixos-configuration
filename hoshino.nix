@@ -1,7 +1,12 @@
 args@{ config, pkgs, ... }:
+let
+  homeDirectory = "/home/hoshino";
+  # Clone your configuration to this directory
+  nixosConfigDir = homeDirectory + "/.config/nixos";
+in
 {
   home.username = "hoshino";
-  home.homeDirectory = "/home/hoshino";
+  home.homeDirectory = homeDirectory;
 
   home.stateVersion = "25.11";
 
@@ -16,7 +21,8 @@ args@{ config, pkgs, ... }:
     syntaxHighlighting.enable = true;
     shellAliases = {
       la = "ls -alhF";
-      nixos-sync = "nixos-rebuild --sudo --flake /home/hoshino/.config/nixos";    # Clone your configuration to this directory
+      nixos-sync = "nixos-rebuild --sudo --flake ${nixosConfigDir}";
+      system-nixpkgs = "nix flake metadata path:${nixosConfigDir} --json 2> /dev/null | jq -r .locks.nodes.nixpkgs.locked.rev";
       gamma15 = "xgamma -gamma 1.5";
       gamma10 = "xgamma -gamma 1.0";
     };
