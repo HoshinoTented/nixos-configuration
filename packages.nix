@@ -66,4 +66,10 @@
     protontricks.enable = true;
     localNetworkGameTransfers.openFirewall = true;
   };
+
+  # Java
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk25;
+  };
 }

@@ -61,5 +61,7 @@ in
     (import ./packages/vscode-pkg.nix args)
     # gamma on x11
     xgamma
+    # All jetbrains IDE should be launched from toolbox, see https://github.com/NixOS/nixpkgs/issues/240444
+    jetbrains-toolbox
   ];
 }
