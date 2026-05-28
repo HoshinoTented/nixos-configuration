@@ -10,6 +10,6 @@ The common issue is missing `webkit2gtk4.1`, which can be solved by:
 
 > This only work on `.deb` package of MeowpadConfigurator. `.AppImage` still got the error even `webkit2gtk4.1` is bundled in the package. 
 
-## My cursor doesn't reponse when playing in fullscreen
+## My cursor doesn't respond when playing in fullscreen
 
 Use X11 instead of Wayland.

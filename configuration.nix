@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./modules/hardwares.nix
       ./modules/miscellaneous.nix
+      ./nix.nix
       ./packages.nix
       ./users.nix
     ];
