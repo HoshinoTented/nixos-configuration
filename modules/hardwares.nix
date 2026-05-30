@@ -62,9 +62,9 @@
     # nmcli connection modify "wireless connection name (not interface name)" connection.mdns yes
     # ```
     # ^i am not sure if this is needed
-    extraConfig = ''
-      MulticastDNS=yes
-    '';
+    # settings = {
+    #   "MulticastDNS" = "yes";
+    # };
   };
 
   services.avahi = {

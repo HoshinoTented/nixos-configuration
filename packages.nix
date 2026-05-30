@@ -17,7 +17,7 @@
   # Only fundamental packages should be installed in this way, for other packages, use user configuration, nix profile or home-manager
   environment.systemPackages = with pkgs; [
     vim wget steam-run
-    neofetch localsend
+    fastfetch localsend
     p7zip zip unzip
     pciutils usbutils
     jq bubblewrap
