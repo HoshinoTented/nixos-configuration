@@ -12,4 +12,4 @@ The common issue is missing `webkit2gtk4.1`, which can be solved by:
 
 ## My cursor doesn't respond when playing in fullscreen
 
-Use X11 instead of Wayland.
+Use X11 instead of Wayland, or switch to Artist mode in OpenTabletDriver, but X11 is still recommended.
