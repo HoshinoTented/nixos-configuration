@@ -58,6 +58,7 @@
     enable = true;
     protontricks.enable = true;
     localNetworkGameTransfers.openFirewall = true;
+    dedicatedServer.openFirewall = true;
   };
 
   # Java
