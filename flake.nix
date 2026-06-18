@@ -3,6 +3,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    prismterminal.url = "git+file:/home/hoshino/Documents/projects/nix-pkgs/prismterminal";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }: {
