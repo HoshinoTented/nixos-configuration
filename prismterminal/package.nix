@@ -47,7 +47,7 @@ stdenv.mkDerivation {
   # TODO: trying to download fresh binary
   src = with lib.fileset; toSource {
     root = ./.;
-    fileset = unions [ ./bin ./share ];
+    fileset = unions [ ./bin ./share ./etc ];
   };
 
   buildInputs = [ autoPatchelfHook ];
@@ -69,6 +69,7 @@ stdenv.mkDerivation {
     runHook preInstall
 
     install -Dm755 ./bin/${binName} $out/bin/${binName}
+    install -Dm644 ./etc/udev/rules.d/99-prismterminal.rules $out/etc/udev/rules.d/99-prismterminal.rules
     find ./share -type f -exec sh -c 'FILE="$1"; install -Dm755 "$FILE" $out/"$FILE"' sh {} \;
 
     runHook postInstall
