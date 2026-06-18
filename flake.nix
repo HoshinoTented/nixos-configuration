@@ -9,7 +9,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, prismterminal, ... }: {
+  outputs = { self, nixpkgs, home-manager, ... }: {
     nixosConfigurations."hoshino-nix" = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit home-manager; };
       modules = [
