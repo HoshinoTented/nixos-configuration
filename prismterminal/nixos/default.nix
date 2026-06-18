@@ -1,8 +1,8 @@
+prismterminal:
 {
   config,
   lib,
   pkgs,
-  prismterminal,
   ...
 }:
 
@@ -18,5 +18,6 @@ in
 
   config = lib.mkIf cfg.enable {
     environment.systemPackages = [ prismterminal ];
+    # TODO: add udev rules for meowpad
   };
 }

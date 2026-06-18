@@ -65,4 +65,9 @@
     enable = true;
     package = pkgs.jdk25;
   };
+
+  # Meowpad
+  programs.prismterminal = {
+    enable = true;
+  };
 }

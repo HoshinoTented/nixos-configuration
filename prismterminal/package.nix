@@ -78,5 +78,6 @@ stdenv.mkDerivation {
     homepage = "https://kagamistudio.com/";
     description = "The next generation of meowpad configurator";
     platforms = platforms.linux;
+    license = licenses.unfreeRedistributable;
   };
 }
