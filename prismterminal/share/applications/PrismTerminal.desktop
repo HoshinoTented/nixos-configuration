@@ -1,9 +1,0 @@
-[Desktop Entry]
-Categories=Utility;
-Comment=Kagami Studio 霍尔键盘配置器
-Exec=prismterminal-tauri
-StartupWMClass=prismterminal-tauri
-Icon=prismterminal-tauri
-Name=PrismTerminal
-Terminal=false
-Type=Application

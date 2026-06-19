@@ -63,14 +63,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1781748282,
-        "narHash": "sha256-Yo9CHd2vY1tnjzZKte+6cuY0hxwe2qKAx6WWqoJi19Y=",
-        "path": "/home/hoshino/.config/nixos/prismterminal",
-        "type": "path"
+        "lastModified": 1781824919,
+        "narHash": "sha256-6IFEUwfg6izfUuDiLbIVHJMRFAufp524AhJ0oLuJQaE=",
+        "owner": "HoshinoTented",
+        "repo": "nix-prismterminal",
+        "rev": "8d01bf02f2478ab639172f419a04ec8f259837c3",
+        "type": "github"
       },
       "original": {
-        "path": "/home/hoshino/.config/nixos/prismterminal",
-        "type": "path"
+        "owner": "HoshinoTented",
+        "repo": "nix-prismterminal",
+        "type": "github"
       }
     },
     "root": {
