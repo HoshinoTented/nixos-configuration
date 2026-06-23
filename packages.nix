@@ -21,10 +21,12 @@
     p7zip zip unzip
     pciutils usbutils
     jq bubblewrap
+    # coreutils replacements
+    bat fd
   ];
 
   # OpenTabletDriver
-  ## If you use multiple monitor and the mapping is only have screen
+  ## If you use multiple monitor and the mapping is only half screen
   ## you can restart the daemon by `systemctl --user restart opentabletdriver.service`
   ## Also it is recommended to play osu! with X11 instead of Wayland
   hardware.opentabletdriver.enable = true;

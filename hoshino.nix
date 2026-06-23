@@ -27,6 +27,16 @@ in
       gamma10 = "xgamma -gamma 1.0";
     };
 
+    initContent = ''
+      realwhich() {
+        readlink -f "$(command -v $1)"
+      }
+    '';
+
+    sessionVariables = {
+      NIXOS_CONFIG_PATH = nixosConfigDir;
+    };
+
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
@@ -58,8 +68,6 @@ in
     telegram-desktop mumble
     # network
     v2rayn xray
-    # utils
-    bat
     (import ./packages/vscode-pkg.nix args)
     # gamma on x11
     xgamma
