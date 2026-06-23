@@ -68,7 +68,7 @@ in
     telegram-desktop mumble
     # network
     v2rayn xray
-    (import ./packages/vscode-pkg.nix args)
+    (pkgs.callPackage ./packages/vscode-pkg.nix {})
     # gamma on x11
     xgamma
     umu-launcher
