@@ -45,7 +45,7 @@ in
     settings = {
       user.name = "HoshinoTented";
       user.email = "hoshinotented@qq.com";
-      user.signkey = "99CC535652820E5B";
+      user.signingkey = "99CC535652820E5B";
       commit.gpgsign = true;
       pull.rebase = true;
       pager.branch = false;
