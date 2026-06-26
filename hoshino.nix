@@ -60,6 +60,9 @@ in
       pull.rebase = true;
       pager.branch = false;
       pager.stash = false;
+      alias = {
+        cherry-pick = "cp";
+      };
     };
   };
 
