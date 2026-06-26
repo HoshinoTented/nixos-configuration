@@ -63,6 +63,8 @@ in
       alias = {
         cherry-pick = "cp";
       };
+
+      init.defaultBranch = "master";
     };
   };
 
