@@ -22,7 +22,7 @@
     pciutils usbutils
     jq bubblewrap
     # coreutils replacements
-    bat fd
+    bat fd eza
   ];
 
   # OpenTabletDriver

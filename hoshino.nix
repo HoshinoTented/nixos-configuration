@@ -20,7 +20,8 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      la = "ls -alhF";
+      ls = "eza";
+      la = "eza -al";
       nixos-sync = "nixos-rebuild --sudo --flake ${nixosConfigDir}";
       system-nixpkgs = "nix flake metadata path:${nixosConfigDir} --json 2> /dev/null | jq -r .locks.nodes.nixpkgs.locked.rev";
       gamma15 = "xgamma -gamma 1.5";

@@ -63,11 +63,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1781824919,
-        "narHash": "sha256-6IFEUwfg6izfUuDiLbIVHJMRFAufp524AhJ0oLuJQaE=",
+        "lastModified": 1782378543,
+        "narHash": "sha256-WQSCHuaQey6aD4lt9b/oXyxzNBiCuvPIBITVGebj6aI=",
         "owner": "HoshinoTented",
         "repo": "nix-prismterminal",
-        "rev": "8d01bf02f2478ab639172f419a04ec8f259837c3",
+        "rev": "8c927b5897f0120a7b2e806790c7d5976e97f1b5",
         "type": "github"
       },
       "original": {
