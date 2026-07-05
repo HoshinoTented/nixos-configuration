@@ -1,4 +1,4 @@
-args@{ config, pkgs, ... }:
+args@{ config, pkgs, nixpkgs-rev, ... }:
 let
   homeDirectory = "/home/hoshino";
   # Clone your configuration to this directory
@@ -20,10 +20,9 @@ in
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      ls = "eza";
-      la = "eza -al";
+      ls = "eza --git";
+      la = "eza --git -al";
       nixos-sync = "nixos-rebuild --sudo --flake ${nixosConfigDir}";
-      system-nixpkgs = "nix flake metadata path:${nixosConfigDir} --json 2> /dev/null | jq -r .locks.nodes.nixpkgs.locked.rev";
       gamma15 = "xgamma -gamma 1.5";
       gamma10 = "xgamma -gamma 1.0";
     };
@@ -36,6 +35,7 @@ in
 
     sessionVariables = {
       NIXOS_CONFIG_PATH = nixosConfigDir;
+      SYSTEM_NIXPKGS = nixpkgs-rev;
     };
 
     oh-my-zsh = {

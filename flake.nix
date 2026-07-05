@@ -20,6 +20,9 @@
           home-manager.useUserPackages = true;
           home-manager.users."hoshino" = ./hoshino.nix;
           home-manager.backupFileExtension = "bak";
+          home-manager.extraSpecialArgs = {
+            nixpkgs-rev = nixpkgs.rev;
+          };
         }
         prismterminal.nixosModules.prismterminal
       ];
