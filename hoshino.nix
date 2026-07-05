@@ -80,5 +80,6 @@ in
     umu-launcher
     # All jetbrains IDE should be launched from toolbox, see https://github.com/NixOS/nixpkgs/issues/240444
     jetbrains-toolbox
+    thunderbird
   ];
 }
