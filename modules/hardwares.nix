@@ -3,10 +3,15 @@
   # kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # boot
-  ## Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
+  # Use provided UUIDs instead of blkid probing (required for btrfs subvolumes)
+  boot.loader.grub.fsIdentifier = "provided";
+
+  # Swap
+  zramSwap.enable = true;
 
   # audio
   ## PipeWire

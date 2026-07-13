@@ -56,7 +56,7 @@ in
     settings = {
       user.name = "HoshinoTented";
       user.email = "hoshinotented@qq.com";
-      user.signingkey = "99CC535652820E5B";
+      user.signingkey = "067AA7C0AB62F3F2";
       commit.gpgsign = true;
       pull.rebase = true;
       pager.branch = false;
@@ -81,5 +81,6 @@ in
     # All jetbrains IDE should be launched from toolbox, see https://github.com/NixOS/nixpkgs/issues/240444
     jetbrains-toolbox
     thunderbird
+    flclash
   ];
 }

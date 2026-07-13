@@ -12,6 +12,7 @@
   };
 
   services.flatpak.enable = true;
+  services.tailscale.enable = true;
   
   # List packages installed in system profile.
   # Only fundamental packages should be installed in this way, for other packages, use user configuration, nix profile or home-manager
