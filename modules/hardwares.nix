@@ -3,13 +3,6 @@
   # kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-  # Use provided UUIDs instead of blkid probing (required for btrfs subvolumes)
-  boot.loader.grub.fsIdentifier = "provided";
-
   # Swap
   zramSwap.enable = true;
 
