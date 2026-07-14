@@ -24,9 +24,9 @@
     extraConfig.pipewire."92-low-latency" = {
       "context.properties" = {
         "default.clock.rate" = 48000;   # Cannot set this to 44100, otherwise osu! will be no audio.
-        "default.clock.quantum" = 128;
-        "default.clock.min-quantum" = 128;
-        "default.clock.max-quantum" = 128;
+        "default.clock.quantum" = 64;
+        "default.clock.min-quantum" = 64;
+        "default.clock.max-quantum" = 64;
       };
     };
   };
