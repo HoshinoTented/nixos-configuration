@@ -11,6 +11,7 @@ with pkgs;
     ms-vscode-remote.remote-ssh
     banacorn.agda-mode
     mkhl.direnv
+    myriad-dreamin.tinymist
     # anthropic.claude-code
   ] ++ vscode-utils.extensionsFromVscodeMarketplace [
     {
