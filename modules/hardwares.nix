@@ -18,16 +18,36 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
-    # This require a reboot
+    # This require `systemctl --user restart pipewire`
     # try to make quantum value as small as possible
-    extraConfig.pipewire."92-low-latency" = {
-      "context.properties" = {
-        "default.clock.rate" = 48000;   # Cannot set this to 44100, otherwise osu! will be no audio.
-        "default.clock.quantum" = 64;
-        "default.clock.min-quantum" = 64;
-        "default.clock.max-quantum" = 64;
-      };
+    # extraConfig.pipewire."92-low-latency" = {
+    #   "context.properties" = {
+    #     "default.clock.rate" = 48000;   # Cannot set this to 44100, otherwise osu! will be no audio.
+    #     "default.clock.quantum" = 64;
+    #     "default.clock.min-quantum" = 64;
+    #     "default.clock.max-quantum" = 64;
+    #   };
+    # };
+
+    # Per-application configuration
+    ## Q: Why pipewire-pulse
+    ## A: `pw-dump | jq '.[] | select(.info.props["application.name"] == "osu!")' | .info.props["client.api"]`
+    ##    is "pipewire-pulse"
+    extraConfig.pipewire-pulse."92-low-latency" = {
+      "stream.rules" = [
+        {
+          "matches" = [
+            {
+              "application.name" = "osu!";
+            }
+          ];
+          "actions" = {
+            "update-props" = {
+              "node.latency" = "64/48000";
+            };
+          };
+        }
+      ];
     };
   };
 
@@ -40,6 +60,7 @@
   # network
   networking.hostName = "hoshino-nix";
   networking.networkmanager.enable = true;
+  networking.nftables.enable = true;
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [
@@ -51,23 +72,8 @@
   };
   
 
-  services.resolved = {
-    enable = true;
-
-    # enables mdns, but this doesn't enough,
-    # still need to enbale mdns for network manager by
-    # ```bash
-    # nmcli connection modify "wireless connection name (not interface name)" connection.mdns yes
-    # ```
-    # ^i am not sure if this is needed
-    # settings = {
-    #   "MulticastDNS" = "yes";
-    # };
-  };
-
-  services.avahi = {
-    enable = true;
-  };
+  services.resolved.enable = true;
+  services.avahi.enable = true;
 
   # no need to enable tlp, plasma enables power-profiles-daemon
 

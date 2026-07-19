@@ -61,6 +61,7 @@ in
       pull.rebase = true;
       pager.branch = false;
       pager.stash = false;
+      core.quotePath = false;
       alias = {
         cherry-pick = "cp";
       };
