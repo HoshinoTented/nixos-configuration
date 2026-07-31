@@ -74,4 +74,15 @@
   programs.prismterminal = {
     enable = true;
   };
+
+  programs.proxychains = {
+    enable = true;
+    proxies = {
+      primary = {
+        type = "http";
+        host = "127.0.0.1";
+        port = 7890;
+      };
+    };
+  };
 }

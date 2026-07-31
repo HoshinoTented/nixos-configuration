@@ -1,6 +1,7 @@
 { pkgs, ... }:
 with pkgs;
 (vscode-with-extensions.override {
+  vscode = vscodium;
   vscodeExtensions = with vscode-extensions; [
     k--kato.intellij-idea-keybindings
     # ms-vscode.cmake-tools

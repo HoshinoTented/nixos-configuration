@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   # kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.enableRedistributableFirmware = true;
 
   # Swap
   zramSwap.enable = true;
@@ -20,14 +20,6 @@
     pulse.enable = true;
     # This require `systemctl --user restart pipewire`
     # try to make quantum value as small as possible
-    # extraConfig.pipewire."92-low-latency" = {
-    #   "context.properties" = {
-    #     "default.clock.rate" = 48000;   # Cannot set this to 44100, otherwise osu! will be no audio.
-    #     "default.clock.quantum" = 64;
-    #     "default.clock.min-quantum" = 64;
-    #     "default.clock.max-quantum" = 64;
-    #   };
-    # };
 
     # Per-application configuration
     ## Q: Why pipewire-pulse
@@ -43,6 +35,7 @@
           ];
           "actions" = {
             "update-props" = {
+              # Cannot set to 44100
               "node.latency" = "64/48000";
             };
           };
@@ -70,7 +63,6 @@
       53317
     ];
   };
-  
 
   services.resolved.enable = true;
   services.avahi.enable = true;
