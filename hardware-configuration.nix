@@ -15,7 +15,7 @@
 
   # Bootloader
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "/dev/disk/by-uuid/10f0c1c0-3783-4efb-86f4-c99ef1297bd7";
   boot.loader.grub.useOSProber = true;
   # Use provided UUIDs instead of blkid probing (required for btrfs subvolumes)
   boot.loader.grub.fsIdentifier = "provided";

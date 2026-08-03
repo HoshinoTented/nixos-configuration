@@ -25,6 +25,7 @@ in
       nixos-sync = "nixos-rebuild --sudo --flake ${nixosConfigDir}";
       gamma15 = "xgamma -gamma 1.5";
       gamma10 = "xgamma -gamma 1.0";
+      "code" = "codium";
     };
 
     initContent = ''
@@ -74,7 +75,7 @@ in
     # IM
     telegram-desktop mumble
     # network
-    v2rayn xray
+    flclash
     (pkgs.callPackage ./packages/vscode-pkg.nix {})
     # gamma on x11
     xgamma
@@ -82,6 +83,5 @@ in
     # All jetbrains IDE should be launched from toolbox, see https://github.com/NixOS/nixpkgs/issues/240444
     jetbrains-toolbox
     thunderbird
-    flclash
   ];
 }
