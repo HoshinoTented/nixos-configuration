@@ -10,3 +10,5 @@
 * [modules/miscellaneous.nix](./modules/miscellaneous.nix): A module which defines miscellaneous configurations, which typically invokes services.
 
 You should use your own [hardware-configuration.nix](./hardware-configuration.nix).
+You may upgrade all NixOS version pin to the nixpkgs you are using,
+such as `system.stateVersion` in [configuration.nix](./configuration.nix) and `home.stateVersion` in [hoshino.nix](./hoshino.nix).

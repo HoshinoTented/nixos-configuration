@@ -74,16 +74,6 @@
   programs.prismterminal = {
     enable = true;
   };
-
-  programs.proxychains = {
-    enable = true;
-    proxies = {
-      primary = {
-        enable = true;
-        type = "http";
-        host = "127.0.0.1";
-        port = 7890;
-      };
-    };
-  };
+  
+  programs.obs-studio.enable = true;
 }

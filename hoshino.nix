@@ -76,12 +76,12 @@ in
     telegram-desktop mumble
     # network
     flclash
-    (pkgs.callPackage ./packages/vscode-pkg.nix {})
     # gamma on x11
     xgamma
     umu-launcher
     # All jetbrains IDE should be launched from toolbox, see https://github.com/NixOS/nixpkgs/issues/240444
     jetbrains-toolbox
-    thunderbird
+    (pkgs.callPackage ./packages/vscode-pkg.nix {})
+    thunderbird vlc
   ];
 }
