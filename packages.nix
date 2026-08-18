@@ -52,6 +52,12 @@
       fcitx5-gtk
       qt6Packages.fcitx5-chinese-addons
     ];
+
+    # Due to
+    # https://github.com/NixOS/nixpkgs/blame/42f149078c9283622403ff204c3aff1978f4d34f/nixos/modules/i18n/input-method/fcitx5.nix#L145
+    # setting `waylandFrontend` to true will cause the lack of fcitx environment variable on x11, so if you need to switch
+    # between wayland and x11 you need to set environment variable by your own.
+    
     # suppress wayland warning
     fcitx5.waylandFrontend = true;
   };

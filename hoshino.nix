@@ -1,4 +1,4 @@
-args@{ config, pkgs, nixpkgs-rev, ... }:
+args@{ config, pkgs, nixpkgs-rev, lib, ... }:
 let
   homeDirectory = "/home/hoshino";
   # Clone your configuration to this directory
@@ -14,6 +14,10 @@ in
     "$HOME/.local/bin"
   ];
 
+  home.file = {
+    ".xprofile".source = ./dots/.xprofile;
+  };
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -23,8 +27,9 @@ in
       ls = "eza --git";
       la = "eza --git -al";
       nixos-sync = "nixos-rebuild --sudo --flake ${nixosConfigDir}";
-      gamma15 = "xgamma -gamma 1.5";
       gamma10 = "xgamma -gamma 1.0";
+      gamma15 = "xgamma -gamma 1.5";
+      gamma20 = "xgamma -gamma 2.0";
       "code" = "codium";
     };
 
