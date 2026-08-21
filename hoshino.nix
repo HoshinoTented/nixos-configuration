@@ -69,7 +69,10 @@ in
       pager.stash = false;
       core.quotePath = false;
       alias = {
-        cherry-pick = "cp";
+        cp = "cherry-pick";
+        p = "push";
+        c = "commit";
+        cc = "checkout";
       };
 
       init.defaultBranch = "master";
