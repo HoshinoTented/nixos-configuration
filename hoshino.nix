@@ -27,10 +27,11 @@ in
       ls = "eza --git";
       la = "eza --git -al";
       nixos-sync = "nixos-rebuild --sudo --flake ${nixosConfigDir}";
+      nixos-edit = "code ${nixosConfigDir}";
       gamma10 = "xgamma -gamma 1.0";
       gamma15 = "xgamma -gamma 1.5";
       gamma20 = "xgamma -gamma 2.0";
-      "code" = "codium";
+      code = "codium";
     };
 
     initContent = ''
