@@ -14,9 +14,9 @@ in
     "$HOME/.local/bin"
   ];
 
-  home.file = {
-    ".xprofile".source = ./dots/.xprofile;
-  };
+  # home.file = {
+  #   ".xprofile".source = ./dots/.xprofile;
+  # };
 
   programs.zsh = {
     enable = true;

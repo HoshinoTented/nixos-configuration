@@ -1,6 +1,13 @@
 { pkgs, ... }:
 {
   # kernel
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [
+    "amdgpu.dpm=1"
+    "amdgpu.gpu_recovery=1"
+    "amdgpu.vm_fault_stop=0"
+    "amdgpu.ppfeaturemask=0xfffd7fff"
+  ];
   hardware.enableRedistributableFirmware = true;
 
   # Swap
@@ -50,6 +57,10 @@
     enable32Bit = true;
   };
 
+  environment.systemPackages = with pkgs; [ lact ];
+  systemd.packages = with pkgs; [ lact ];
+  systemd.services.lactd.wantedBy = [ "multi-user.target" ];
+
   # network
   networking.hostName = "hoshino-nix";
   networking.networkmanager.enable = true;
@@ -79,7 +90,7 @@
   services.xserver.enable = true;
   services.desktopManager.plasma6.enable = true;
   services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
 
   # required by flatpak
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];

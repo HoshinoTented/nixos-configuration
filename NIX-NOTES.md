@@ -12,3 +12,7 @@ You can use `:lf .` in `nix repl` to enter the output of a flake.
 
 Use `nix flake update` to update nixpkgs.
 Use `nix-collect-garbage --delete-older-than <period>` (you can use `30d`) to delete old packages, if you run this command as root, it will also delete system genertions that older than the period.
+
+## Specialisation
+
+Have a try!
